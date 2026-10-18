@@ -79,7 +79,9 @@ lib/
 
 ### Onboarding & Authentication
 
-<img src="assets\screenshots\flutter_04.png" width="180"/>  <img src="assets\screenshots\flutter_01.png" width="180"/>  <img src="assets\screenshots\flutter_02.png" width="180"/>  <img src="assets\screenshots\flutter_03.png" width="180"/> 
+<img src="assets\screenshots\flutter_04.png" width="180"/>  <img src="assets\screenshots\flutter_01.png" width="180"/> 
+<img src="assets\screenshots\flutter_01 copy.png" width="180"/> 
+ <img src="assets\screenshots\flutter_02.png" width="180"/>  <img src="assets\screenshots\flutter_03.png" width="180"/> 
 
 
 
