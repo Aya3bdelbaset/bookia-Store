@@ -34,22 +34,42 @@ The project focuses on building responsive interfaces, reusable components, and 
 ## 📂 Project Structure
 
 ```text
+
 lib/
 │
 ├── core/
+│   ├── networking/
+│   │   ├── api_endpoint.dart
+│   │   └── dio_factory.dart
+│   │
 │   ├── routes/
 │   │   ├── app_routes.dart
 │   │   └── routes_name.dart
+│   │
+│   ├── services/
+│   │   └── locale/
+│   │       └── local_helper.dart
 │   │
 │   ├── theme/
 │   │   ├── app_colors.dart
 │   │   └── app_text_style.dart
 │   │
+│   ├── utils/
+│   │   └── const_app.dart
+│   │
 │   └── widgets/
 │       └── validator.dart
 │
 ├── features/
+│   │
 │   ├── auth/
+│   │   ├── cubit/
+│   │   │   ├── auth_cubit.dart
+│   │   │   └── auth_state.dart
+│   │   │
+│   │   ├── repo/
+│   │   │   └── auth_repo.dart
+│   │   │
 │   │   └── ui/
 │   │       ├── widgets/
 │   │       │   ├── custom_text_field.dart
@@ -60,19 +80,50 @@ lib/
 │   │       ├── loginScreen.dart
 │   │       └── registerScreen.dart
 │   │
-│   ├── home/
-│   │   └── ui/
-│   │       └── homeScreen.dart
+│   ├── bottom_nav_bar/
+│   │   └── presentation/
+│   │       └── bottom_nav_screen.dart
 │   │
-│   └── onboarding/
-│       └── ui/
-│           ├── widgets/
-│           │   ├── button.dart
-│           │   └── header.dart
-│           └── onboardingScreen.dart
+│   ├── home/
+│   │   ├── models/
+│   │   │   ├── books_model.dart
+│   │   │   └── slider_model.dart
+│   │   │
+│   │   ├── presentation/
+│   │   │   ├── cubit/
+│   │   │   │   ├── home_cubit.dart
+│   │   │   │   └── home_state.dart
+│   │   │   │
+│   │   │   └── ui/
+│   │   │       ├── widgets/
+│   │   │       ├── home_screen.dart
+│   │   │       └── search_screen.dart
+│   │   │
+│   │   └── repo/
+│   │       └── home_repo.dart
+│   │
+│   ├── onboarding/
+│   │   └── ui/
+│   │       ├── widgets/
+│   │       │   ├── button.dart
+│   │       │   └── header.dart
+│   │       └── onboardingScreen.dart
+│   │
+│   └── profile/
+│       └── presentation/
+│           └── ui/
+│               ├── widgets/
+│               │   ├── header_profile.dart
+│               │   ├── infoUser.dart
+│               │   └── menu_profile.dart
+│               └── profile_screen.dart
+│
+├── gen/
+│   └── locale_keys.g.dart
 │
 ├── bookia_store.dart
 └── main.dart
+
 ```
 
 ## 📱 App Screenshots

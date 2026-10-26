@@ -26,8 +26,7 @@ class BookiaApp extends StatelessWidget {
           fontFamily: 'Dm',
         ),
         initialRoute: 
-        // intiPage(),
-        AppRoutes.bottumNavScreen,
+        intiPage(),
         onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );

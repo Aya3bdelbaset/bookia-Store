@@ -1,4 +1,4 @@
-import 'package:bookia/buttom-nav-bar/presentation/buttom_nav_screen.dart';
+import 'package:bookia/features/bottom_nav_bar/presentation/buttom_nav_screen.dart';
 import 'package:bookia/core/routes/routes_name.dart';
 import 'package:bookia/features/auth/cubit/auth_cubit.dart';
 import 'package:bookia/features/auth/repo/auth_repo.dart';
