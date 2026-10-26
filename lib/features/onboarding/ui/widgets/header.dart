@@ -22,7 +22,7 @@ class OnboardingHeader extends StatelessWidget {
         12.verticalSpace,
         Text(
           'OrderYourBookNow'.tr(),
-          style: AppTextStyles.dmRegular.copyWith(color: AppColors.black),
+          style: AppTextStyles.dmRegular20.copyWith(color: AppColors.black),
         ),
       ],
     );

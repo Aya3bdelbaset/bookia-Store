@@ -1,10 +1,11 @@
 import 'package:bookia/core/theme/app_colors.dart';
+import 'package:bookia/core/widgets/validator.dart';
 import 'package:bookia/features/auth/cubit/auth_cubit.dart';
 import 'package:bookia/features/auth/ui/loginScreen.dart';
 import 'package:bookia/features/auth/ui/widgets/custom_text_field.dart';
 import 'package:bookia/features/auth/ui/widgets/footer.dart';
 import 'package:bookia/features/auth/ui/widgets/header.dart';
-import 'package:bookia/features/home/ui/homeScreen.dart';
+import 'package:bookia/features/home/presentation/ui/home_screen.dart';
 import 'package:bookia/features/onboarding/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -99,27 +100,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           controller: nameController,
                           hintText: 'Username ',
 
-                          // validator: AppValidators.fullName,
+                          validator: AppValidators.fullName,
                         ),
                         15.verticalSpace,
                         CustomTextField(
                           controller: emailController,
                           hintText: 'Email ',
-                          //validator: AppValidators.email,
+                          validator: AppValidators.email,
                         ),
                         15.verticalSpace,
                         CustomTextField(
                           controller: passwordController,
                           hintText: 'Password',
                           obscureText: true,
-                          // validator: AppValidators.password,
+                          validator: AppValidators.password,
                         ),
                         15.verticalSpace,
                         CustomTextField(
                           controller: confirmPasswordController,
                           hintText: 'Confirm password',
                           obscureText: true,
-                          // validator: AppValidators.password,
+                          validator: AppValidators.password,
                         ),
 
                         30.verticalSpace,

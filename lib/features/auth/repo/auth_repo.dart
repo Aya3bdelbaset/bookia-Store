@@ -1,7 +1,10 @@
+import 'package:bookia/core/networking/api_endpoint.dart';
+import 'package:bookia/core/networking/dio_factory.dart';
+import 'package:bookia/core/services/locale/local_helper.dart';
+import 'package:bookia/core/utils/const_app.dart';
 import 'package:dio/dio.dart';
 
 class AuthRepo {
-  static Dio dio = Dio();
   static Future<bool> register({
     required String email,
     required String password,
@@ -9,8 +12,8 @@ class AuthRepo {
     required String name,
   }) async {
     try {
-      final response = await dio.post(
-        "https://codingarabic.eraapro.com/api/register",
+      final response = await DioFactory.dio?.post(
+        ApiEndpoints.register,
         data: {
           "email": email,
           "password": password,
@@ -18,7 +21,34 @@ class AuthRepo {
           "password_confirmation": passwordConfirmation,
         },
       );
-      if (response.statusCode == 200 || response.statusCode == 201) {
+      if (response?.statusCode == 200 || response?.statusCode == 201) {
+        String? token = response?.data["data"]["token"];
+        saveToken(token);
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+  }
+
+  static saveToken(String? token) {
+    LocalHelper.prefs?.setString(AppConst.userToken, token ?? "");
+  }
+
+  static Future<bool> login({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      final response = await DioFactory.dio?.post(
+        ApiEndpoints.login,
+        data: {"email": email, "password": password},
+      );
+      if (response?.statusCode == 200 || response?.statusCode == 201) {
+        String? token = response?.data["data"]["token"];
+        saveToken(token);
         return true;
       } else {
         return false;
