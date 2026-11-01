@@ -3,7 +3,6 @@ import 'package:bookia/core/networking/dio_factory.dart';
 import 'package:bookia/features/home/models/books_model.dart';
 import 'package:bookia/features/home/models/slider_model.dart';
 
-
 class HomeRepo {
   static Future<BooksModel?>? getBestSellerBooks() async {
     try {

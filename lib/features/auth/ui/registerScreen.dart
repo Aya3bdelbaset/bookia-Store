@@ -1,5 +1,4 @@
 import 'package:bookia/core/theme/app_colors.dart';
-import 'package:bookia/core/widgets/validator.dart';
 import 'package:bookia/features/auth/cubit/auth_cubit.dart';
 import 'package:bookia/features/auth/ui/loginScreen.dart';
 import 'package:bookia/features/auth/ui/widgets/custom_text_field.dart';
@@ -45,14 +44,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
             builder: (_) => const Center(child: CircularProgressIndicator()),
           );
         } else if (state is AuthSuccess) {
-          Navigator.pop(context); // Close loading dialog
+          Navigator.pop(context);
 
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (_) => const HomeScreen()),
           );
         } else if (state is AuthError) {
-          Navigator.pop(context); // Close loading dialog
+          Navigator.pop(context);
 
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
@@ -86,7 +85,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             border: Border.all(color: AppColors.outlineGray),
                           ),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () => Navigator.maybePop(context),
                             icon: const Icon(Icons.arrow_back_ios_new),
                             iconSize: 19.sp,
                             color: AppColors.black,
@@ -99,28 +98,56 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         CustomTextField(
                           controller: nameController,
                           hintText: 'Username ',
-
-                          validator: AppValidators.fullName,
+                          validator: (value) {
+                            if (value == null || value.trim().isEmpty) {
+                              return 'Please enter your username';
+                            }
+                            return null;
+                          },
                         ),
                         15.verticalSpace,
                         CustomTextField(
                           controller: emailController,
                           hintText: 'Email ',
-                          validator: AppValidators.email,
+                          keyboardType: TextInputType.emailAddress,
+                          validator: (value) {
+                            final email = value?.trim() ?? '';
+                            if (email.isEmpty) {
+                              return 'Please enter your email';
+                            }
+                            if (!RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
+                                .hasMatch(email)) {
+                              return 'Please enter a valid email';
+                            }
+                            return null;
+                          },
                         ),
                         15.verticalSpace,
                         CustomTextField(
                           controller: passwordController,
                           hintText: 'Password',
                           obscureText: true,
-                          validator: AppValidators.password,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your password';
+                            }
+                            return null;
+                          },
                         ),
                         15.verticalSpace,
                         CustomTextField(
                           controller: confirmPasswordController,
                           hintText: 'Confirm password',
                           obscureText: true,
-                          validator: AppValidators.password,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please confirm your password';
+                            }
+                            if (value != passwordController.text) {
+                              return 'Passwords do not match';
+                            }
+                            return null;
+                          },
                         ),
 
                         30.verticalSpace,
@@ -152,7 +179,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                         90.verticalSpace,
                         AuthFooter(
-                          message: 'Don’t have an account?',
+                          message: 'Already have an account?',
                           actionText: 'Login Now',
                           onTap: () {
                             Navigator.push(

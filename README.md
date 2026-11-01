@@ -84,6 +84,23 @@ lib/
 │   │   └── presentation/
 │   │       └── bottom_nav_screen.dart
 │   │
+│   ├── cart/
+│   │   ├── data/
+│   │   │   └── model/
+│   │   │       └── cart_model.dart
+│   │   │
+│   │   ├── presentation/
+│   │   │   ├── cubit/
+│   │   │   │   ├── cart_cubit.dart
+│   │   │   │   └── cart_state.dart
+│   │   │   │
+│   │   │   └── ui/
+│   │   │       ├── widgets/
+│   │   │       └── cart_screen.dart
+│   │   │
+│   │   └── repo/
+│   │       └── cart_repo.dart
+│   │
 │   ├── home/
 │   │   ├── models/
 │   │   │   ├── books_model.dart
@@ -109,14 +126,43 @@ lib/
 │   │       │   └── header.dart
 │   │       └── onboardingScreen.dart
 │   │
-│   └── profile/
-│       └── presentation/
-│           └── ui/
-│               ├── widgets/
-│               │   ├── header_profile.dart
-│               │   ├── infoUser.dart
-│               │   └── menu_profile.dart
-│               └── profile_screen.dart
+│   ├── profile/
+│   │   ├── data/
+│   │   │   └── model/
+│   │   │       └── profile_response.dart
+│   │   │
+│   │   ├── presentation/
+│   │   │   ├── cubit/
+│   │   │   │   ├── profile_cubit.dart
+│   │   │   │   └── profile_state.dart
+│   │   │   │
+│   │   │   └── ui/
+│   │   │       ├── widgets/
+│   │   │       │   ├── header_profile.dart
+│   │   │       │   ├── infoUser.dart
+│   │   │       │   └── menu_profile.dart
+│   │   │       └── profile_screen.dart
+│   │   │
+│   │   └── repo/
+│   │       └── profile_repo.dart
+│   │
+│   └── wishlist/
+│       ├── data/
+│       │   └── model/
+│       │       └── wishlist_model.dart
+│       │
+│       ├── presentation/
+│       │   ├── cubit/
+│       │   │   ├── wishlist_cubit.dart
+│       │   │   └── wishlist_state.dart
+│       │   │
+│       │   └── ui/
+│       │       ├── widgets/
+│       │       │   └── wishlist_item.dart
+│       │       └── wishlist_screen.dart
+│       │
+│       └── repo/
+│           └── wishlist_repo.dart
 │
 ├── gen/
 │   └── locale_keys.g.dart
@@ -136,7 +182,9 @@ lib/
  <img src="assets\screenshots\flutter_05.png" width="180"/> 
  <img src="assets\screenshots\flutter_03 copy.png" width="180"/> 
  <img src="assets\screenshots\flutter_04 copy.png" width="180"/> 
- <img src="assets\screenshots\flutter_06.png" width="180"/> 
+ <img src="assets\screenshots\flutter_01 copy 2.png" width="180"/> 
+ <img src="assets\screenshots\flutter_02 copy.png" width="180"/> 
+ <img src="assets\screenshots\flutter_03 copy 2.png" width="180"/> 
 
 
 

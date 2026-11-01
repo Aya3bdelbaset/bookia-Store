@@ -25,14 +25,15 @@ class BookiaApp extends StatelessWidget {
           scaffoldBackgroundColor: AppColors.backGround,
           fontFamily: 'Dm',
         ),
-        initialRoute: 
-        intiPage(),
+        initialRoute:
+        //  AppRoutes.searchScreen,
+        initPage(),
         onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );
   }
 
-  String intiPage() {
+  String initPage() {
     if (LocalHelper.prefs?.getString(AppConst.userToken) != null) {
       return AppRoutes.bottumNavScreen;
     } else {

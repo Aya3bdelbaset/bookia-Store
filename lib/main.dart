@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  LocalHelper.inti();
-  DioFactory.inti();
+  LocalHelper.init();
+  DioFactory.init();
   runApp(
     EasyLocalization(
       supportedLocales: const [Locale('en'), Locale('ar')],

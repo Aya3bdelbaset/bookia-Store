@@ -6,7 +6,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookCard extends StatelessWidget {
   final Products? product;
-  const BookCard({super.key, this.product});
+  final VoidCallback? onBuy;
+  final VoidCallback? onAddToWishlist;
+  final bool isFavorite;
+
+  const BookCard({
+    super.key,
+    this.product,
+    this.onBuy,
+    this.onAddToWishlist,
+    required this.isFavorite,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +31,29 @@ class BookCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.r),
-              ),
-              child: Image.network(
-                product?.image ?? "",
-                width: 140.w,
-                height: 175.h,
-                fit: BoxFit.contain,
-              ),
+            child: Stack(
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: Image.network(
+                    product?.image ?? "",
+                    fit: BoxFit.contain,
+                  ),
+                ),
+
+                Positioned(
+                  top: 5.h,
+                  right: 5.w,
+                  child: IconButton(
+                    onPressed: onAddToWishlist,
+                    icon: Icon(
+                      isFavorite ? Icons.favorite : Icons.favorite_border,
+                      color: isFavorite ? AppColors.gold : AppColors.gold,
+                      size: 25.r,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
 
@@ -60,7 +82,7 @@ class BookCard extends StatelessWidget {
               SizedBox(
                 height: 28.h,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: onBuy,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF292929),
                     foregroundColor: Colors.white,

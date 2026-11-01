@@ -83,9 +83,9 @@ class SearchScreen extends StatelessWidget {
                                   product: Products(
                                     name: 'Book name',
                                     price: '33',
-                                    image:
-                                        'https://i.pinimg.com/1200x/53/d6/93/53d69362d28551bcaf218d064224c474.jpg',
+                                    image: 'https://i.pinimg.com/1200x/53/d6/93/53d69362d28551bcaf218d064224c474.jpg',
                                   ),
+                                  isFavorite: false,
                                 );
                               },
                             ),
@@ -109,7 +109,10 @@ class SearchScreen extends StatelessWidget {
                                   crossAxisSpacing: 12.w,
                                 ),
                             itemBuilder: (context, index) {
-                              return BookCard(product: products[index]);
+                              return BookCard(
+                                product: products[index],
+                                isFavorite: false,
+                              );
                             },
                           );
                         }

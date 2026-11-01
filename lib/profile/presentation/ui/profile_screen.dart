@@ -4,7 +4,6 @@ import 'package:bookia/profile/presentation/ui/widgets/menu_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -42,3 +41,5 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
+
+
