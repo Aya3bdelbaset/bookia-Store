@@ -33,4 +33,8 @@ class AppTextStyles {
     fontSize: 18.sp,
     fontWeight: FontWeight.w400,
   );
+    static TextStyle dmRegular36 = TextStyle(
+    fontSize: 36.sp,
+    fontWeight: FontWeight.w400,
+  );
 }

@@ -1,6 +1,7 @@
-import 'package:bookia/profile/presentation/ui/widgets/header_profile.dart';
-import 'package:bookia/profile/presentation/ui/widgets/infoUser.dart';
-import 'package:bookia/profile/presentation/ui/widgets/menu_profile.dart';
+
+import 'package:bookia/features/profile/presentation/ui/widgets/header_profile.dart';
+import 'package:bookia/features/profile/presentation/ui/widgets/infoUser.dart';
+import 'package:bookia/features/profile/presentation/ui/widgets/menu_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

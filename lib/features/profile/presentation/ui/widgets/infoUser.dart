@@ -1,6 +1,6 @@
 import 'package:bookia/core/theme/app_colors.dart';
 import 'package:bookia/core/theme/app_text_style.dart';
-import 'package:bookia/profile/presentation/cubit/profile_cubit.dart';
+import 'package:bookia/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,5 +1,6 @@
 import 'package:bookia/core/theme/app_colors.dart';
 import 'package:bookia/core/theme/app_text_style.dart';
+import 'package:bookia/features/book_details/presentation/ui/book_details_screen.dart';
 import 'package:bookia/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:bookia/features/home/models/books_model.dart';
 import 'package:bookia/features/home/presentation/cubit/home_cubit.dart';
@@ -112,6 +113,21 @@ class HomeScreen extends StatelessWidget {
                               return BookCard(
                                 product: product,
                                 isFavorite: isFavorite,
+                                onTap: () {
+                                  final productId = product.id;
+
+                                  if (productId == null) return;
+
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          ProductDetailsScreen(
+                                            productId: productId,
+                                          ),
+                                    ),
+                                  );
+                                },
 
                                 onBuy: () async {
                                   final productId = product.id;

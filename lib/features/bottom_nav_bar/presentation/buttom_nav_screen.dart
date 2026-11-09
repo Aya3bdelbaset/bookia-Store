@@ -1,13 +1,12 @@
-
 import 'package:bookia/core/theme/app_colors.dart';
 import 'package:bookia/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:bookia/features/cart/presentation/ui/cart_screen.dart';
 import 'package:bookia/features/home/presentation/cubit/home_cubit.dart';
 import 'package:bookia/features/home/presentation/ui/home_screen.dart';
+import 'package:bookia/features/profile/presentation/cubit/profile_cubit.dart';
+import 'package:bookia/features/profile/presentation/ui/profile_screen.dart';
 import 'package:bookia/features/wishlist/presentation/cubit/wishlist_cubit.dart';
 import 'package:bookia/features/wishlist/presentation/ui/wishlist_screen.dart';
-import 'package:bookia/profile/presentation/cubit/profile_cubit.dart';
-import 'package:bookia/profile/presentation/ui/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';

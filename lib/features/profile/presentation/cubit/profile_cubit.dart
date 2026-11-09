@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:bookia/profile/data/model/profile_response.dart';
-import 'package:bookia/profile/repo/profile_repo.dart';
+import 'package:bookia/features/profile/data/model/profile_response.dart';
+import 'package:bookia/features/profile/repo/profile_repo.dart';
+
 
 import 'package:flutter/foundation.dart';
 

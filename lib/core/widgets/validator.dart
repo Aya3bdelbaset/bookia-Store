@@ -4,12 +4,16 @@ class AppValidators {
       return 'Please enter full name';
     }
 
+    if (value.trim().length < 3) {
+      return 'Full name must be at least 3 characters';
+    }
+
     return null;
   }
 
   static String? email(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Please enter your email ';
+      return 'Please enter your email';
     }
 
     final emailRegex = RegExp(
@@ -17,7 +21,7 @@ class AppValidators {
     );
 
     if (!emailRegex.hasMatch(value.trim())) {
-      return 'Please enter a valid email ';
+      return 'Please enter a valid email';
     }
 
     return null;
@@ -42,6 +46,40 @@ class AppValidators {
 
     if (!RegExp(r'[0-9]').hasMatch(value)) {
       return 'Password must contain a number';
+    }
+
+    return null;
+  }
+
+  static String? address(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'Please enter your address';
+    }
+
+    if (value.trim().length < 5) {
+      return 'Address must be at least 5 characters';
+    }
+
+    return null;
+  }
+
+  static String? phone(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'Please enter your phone number';
+    }
+
+    final phoneRegex = RegExp(r'^(010|011|012|015)[0-9]{8}$');
+
+    if (!phoneRegex.hasMatch(value.trim())) {
+      return 'Please enter a valid Egyptian phone number';
+    }
+
+    return null;
+  }
+
+  static String? governorate(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please select your governorate';
     }
 
     return null;

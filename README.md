@@ -1,4 +1,3 @@
-
 # 📚 Bookia Store
 
 ### A Modern Bookstore Mobile Application Built with Flutter
@@ -21,15 +20,15 @@ The project focuses on building responsive interfaces, reusable components, and 
 
 ## 🛠️ Technologies & Tools
 
-| Technology | Purpose |
-|---|---|
-| Flutter | Cross-platform mobile development |
-| Dart | Programming language |
-| Flutter ScreenUtil | Responsive UI |
-| Easy Localization | Localization |
-| Flutter Native Splash | Native splash screen |
-| Material Design | UI components |
-| VS Code | Development environment |
+| Technology            | Purpose                           |
+| --------------------- | --------------------------------- |
+| Flutter               | Cross-platform mobile development |
+| Dart                  | Programming language              |
+| Flutter ScreenUtil    | Responsive UI                     |
+| Easy Localization     | Localization                      |
+| Flutter Native Splash | Native splash screen              |
+| Material Design       | UI components                     |
+| VS Code               | Development environment           |
 
 ## 📂 Project Structure
 
@@ -176,17 +175,18 @@ lib/
 
 ### Onboarding & Authentication
 
-<img src="assets\screenshots\flutter_04.png" width="180"/>  <img src="assets\screenshots\flutter_01.png" width="180"/> 
-<img src="assets\screenshots\flutter_01 copy.png" width="180"/> 
- <img src="assets\screenshots\flutter_02.png" width="180"/>  <img src="assets\screenshots\flutter_03.png" width="180"/> 
- <img src="assets\screenshots\flutter_05.png" width="180"/> 
- <img src="assets\screenshots\flutter_03 copy.png" width="180"/> 
- <img src="assets\screenshots\flutter_04 copy.png" width="180"/> 
- <img src="assets\screenshots\flutter_01 copy 2.png" width="180"/> 
- <img src="assets\screenshots\flutter_02 copy.png" width="180"/> 
- <img src="assets\screenshots\flutter_03 copy 2.png" width="180"/> 
-
-
+<img src="assets\screenshots\flutter_04.png" width="180"/> <img src="assets\screenshots\flutter_01.png" width="180"/>
+<img src="assets\screenshots\flutter_01 copy.png" width="180"/>
+<img src="assets\screenshots\flutter_02.png" width="180"/> <img src="assets\screenshots\flutter_03.png" width="180"/>
+<img src="assets\screenshots\flutter_05.png" width="180"/>
+<img src="assets\screenshots\flutter_03 copy 3.png" width="180"/>
+<img src="assets\screenshots\flutter_03 copy.png" width="180"/>
+<img src="assets\screenshots\flutter_04 copy.png" width="180"/>
+<img src="assets\screenshots\flutter_01 copy 2.png" width="180"/>
+<img src="assets\screenshots\flutter_02 copy.png" width="180"/>
+<img src="assets\screenshots\flutter_03 copy 2.png" width="180"/>
+<img src="assets\screenshots\flutter_01 copy 3.png" width="180"/>
+<img src="assets\screenshots\flutter_02 copy 2.png" width="180"/>
 
 ## 🚀 Getting Started
 

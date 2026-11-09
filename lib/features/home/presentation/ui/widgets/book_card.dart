@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookCard extends StatelessWidget {
   final Products? product;
+  final VoidCallback? onTap;
   final VoidCallback? onBuy;
   final VoidCallback? onAddToWishlist;
   final bool isFavorite;
@@ -15,7 +16,7 @@ class BookCard extends StatelessWidget {
     this.product,
     this.onBuy,
     this.onAddToWishlist,
-    required this.isFavorite,
+    required this.isFavorite, this.onTap,
   });
 
   @override
@@ -33,11 +34,14 @@ class BookCard extends StatelessWidget {
           Expanded(
             child: Stack(
               children: [
-                SizedBox(
-                  width: double.infinity,
-                  child: Image.network(
-                    product?.image ?? "",
-                    fit: BoxFit.contain,
+                GestureDetector(
+                  onTap: onTap,
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: Image.network(
+                      product?.image ?? "",
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
 
