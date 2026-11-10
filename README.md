@@ -181,9 +181,12 @@ lib/
 
 ## 📱 App Screenshots
 
-### Error Handling 
-<img src="assets\screenshots\flutter_01 copy 4.png" width="180"/> 
-<img src="assets\screenshots\flutter_02 copy 3.png" width="180"/> 
+### Error Handling
+
+<div style="display: flex; gap: 10px; align-items: flex-start;">
+  <img src="assets/screenshots/flutter_01 copy 4.png" width="180"/>
+  <img src="assets/screenshots/flutter_02 copy 3.png" width="180"/>
+</div>
 
 ### Onboarding & Authentication | Home & Book Discovery | Book Search & Details | Shopping Cart & Checkout | Wishlist & Favorites | User Profile & Account Management
 
