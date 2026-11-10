@@ -32,7 +32,7 @@ class HomeCubit extends Cubit<HomeState> {
 
         emit(GetBestSellerSuccess(response.data?.products));
       } else {
-        emit(GetBestSellerError());
+        emit(GetBestSellerError('No books found.'));
       }
     } catch (e, stackTrace) {
       if (isClosed) return;
@@ -40,7 +40,7 @@ class HomeCubit extends Cubit<HomeState> {
       print('HOME ERROR: $e');
       print(stackTrace);
 
-      emit(GetBestSellerError());
+      emit(GetBestSellerError(e.toString()));
     }
   }
 
@@ -57,7 +57,7 @@ class HomeCubit extends Cubit<HomeState> {
       if (data != null) {
         emit(SearchSuccess(data.whereType<Products>().toList()));
       } else {
-        emit(SearchError());
+        emit(SearchError('No products found.'));
       }
     } catch (e, stackTrace) {
       if (isClosed) return;
@@ -65,7 +65,7 @@ class HomeCubit extends Cubit<HomeState> {
       print('SEARCH ERROR: $e');
       print(stackTrace);
 
-      emit(SearchError());
+      emit(SearchError(e.toString()));
     }
   }
 
@@ -86,7 +86,7 @@ class HomeCubit extends Cubit<HomeState> {
 
         emit(GetSlidersSuccess(response));
       } else {
-        emit(GetSlidersError());
+        emit(GetSlidersError('Failed to load sliders.'));
       }
     } catch (e, stackTrace) {
       if (isClosed) return;
@@ -94,7 +94,7 @@ class HomeCubit extends Cubit<HomeState> {
       print('SLIDERS ERROR: $e');
       print(stackTrace);
 
-      emit(GetSlidersError());
+      emit(GetSlidersError(e.toString()));
     }
   }
 }

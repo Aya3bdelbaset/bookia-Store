@@ -2,6 +2,8 @@ import 'package:bookia/core/networking/api_endpoint.dart';
 import 'package:bookia/core/networking/dio_factory.dart';
 import 'package:bookia/features/home/models/books_model.dart';
 import 'package:bookia/features/home/models/slider_model.dart';
+import 'package:dio/dio.dart';
+import 'package:bookia/core/networking/api_errorHandling.dart';
 
 class HomeRepo {
   static Future<BooksModel?>? getBestSellerBooks() async {
@@ -13,8 +15,10 @@ class HomeRepo {
       } else {
         return null;
       }
+    } on DioException catch (e) {
+      throw ApiErrorHandler.handleDioException(e);
     } catch (e) {
-      return null;
+      throw Exception('Something went wrong. Please try again.');
     }
   }
 
@@ -30,8 +34,10 @@ class HomeRepo {
       } else {
         return null;
       }
+    } on DioException catch (e) {
+      throw ApiErrorHandler.handleDioException(e);
     } catch (e) {
-      return null;
+      throw Exception('Something went wrong. Please try again.');
     }
   }
 
@@ -47,10 +53,13 @@ class HomeRepo {
       }
 
       return null;
+    } on DioException catch (e) {
+      print('SLIDERS ERROR: $e');
+      throw ApiErrorHandler.handleDioException(e);
     } catch (e, stackTrace) {
       print('SLIDERS ERROR: $e');
       print(stackTrace);
-      return null;
+      throw Exception('Something went wrong. Please try again.');
     }
   }
 }

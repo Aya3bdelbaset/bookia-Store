@@ -191,8 +191,30 @@ class HomeScreen extends StatelessWidget {
                           );
                         },
                       );
+                    } else if (state is GetBestSellerError) {
+                      return Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              state.message,
+                              textAlign: TextAlign.center,
+                              style: AppTextStyles.dmRegular24.copyWith(
+                                color: AppColors.black,
+                              ),
+                            ),
+                            12.verticalSpace,
+                            ElevatedButton(
+                              onPressed: () {
+                                context.read<HomeCubit>().getBestSellerBooks();
+                              },
+                              child: const Text('Try Again'),
+                            ),
+                          ],
+                        ),
+                      );
                     } else {
-                      return const Center(child: Text('Failed to load books'));
+                      return const SizedBox.shrink();
                     }
                   },
                 ),
