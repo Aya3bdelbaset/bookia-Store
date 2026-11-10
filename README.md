@@ -33,13 +33,13 @@ The project focuses on building responsive interfaces, reusable components, and 
 ## 📂 Project Structure
 
 ```text
-
 lib/
 │
 ├── core/
 │   ├── networking/
 │   │   ├── api_endpoint.dart
-│   │   └── dio_factory.dart
+│   │   ├── dio_factory.dart
+│   │   └── api_errorHandling.dart
 │   │
 │   ├── routes/
 │   │   ├── app_routes.dart
@@ -61,14 +61,23 @@ lib/
 │
 ├── features/
 │   │
+│   ├── splash/
+│   │   └── ui/
+│   │       └── splash_screen.dart
+│   │
+│   ├── onboarding/
+│   │   └── ui/
+│   │       ├── widgets/
+│   │       │   ├── button.dart
+│   │       │   └── header.dart
+│   │       └── onboardingScreen.dart
+│   │
 │   ├── auth/
 │   │   ├── cubit/
 │   │   │   ├── auth_cubit.dart
 │   │   │   └── auth_state.dart
-│   │   │
 │   │   ├── repo/
 │   │   │   └── auth_repo.dart
-│   │   │
 │   │   └── ui/
 │   │       ├── widgets/
 │   │       │   ├── custom_text_field.dart
@@ -83,97 +92,100 @@ lib/
 │   │   └── presentation/
 │   │       └── bottom_nav_screen.dart
 │   │
-│   ├── cart/
-│   │   ├── data/
-│   │   │   └── model/
-│   │   │       └── cart_model.dart
-│   │   │
-│   │   ├── presentation/
-│   │   │   ├── cubit/
-│   │   │   │   ├── cart_cubit.dart
-│   │   │   │   └── cart_state.dart
-│   │   │   │
-│   │   │   └── ui/
-│   │   │       ├── widgets/
-│   │   │       └── cart_screen.dart
-│   │   │
-│   │   └── repo/
-│   │       └── cart_repo.dart
-│   │
 │   ├── home/
 │   │   ├── models/
 │   │   │   ├── books_model.dart
 │   │   │   └── slider_model.dart
-│   │   │
 │   │   ├── presentation/
 │   │   │   ├── cubit/
 │   │   │   │   ├── home_cubit.dart
 │   │   │   │   └── home_state.dart
-│   │   │   │
 │   │   │   └── ui/
 │   │   │       ├── widgets/
 │   │   │       ├── home_screen.dart
 │   │   │       └── search_screen.dart
-│   │   │
 │   │   └── repo/
 │   │       └── home_repo.dart
 │   │
-│   ├── onboarding/
-│   │   └── ui/
-│   │       ├── widgets/
-│   │       │   ├── button.dart
-│   │       │   └── header.dart
-│   │       └── onboardingScreen.dart
-│   │
-│   ├── profile/
-│   │   ├── data/
-│   │   │   └── model/
-│   │   │       └── profile_response.dart
-│   │   │
+│   ├── book_details/
 │   │   ├── presentation/
 │   │   │   ├── cubit/
-│   │   │   │   ├── profile_cubit.dart
-│   │   │   │   └── profile_state.dart
-│   │   │   │
+│   │   │   │   ├── book_details_cubit.dart
+│   │   │   │   └── book_details_state.dart
 │   │   │   └── ui/
 │   │   │       ├── widgets/
-│   │   │       │   ├── header_profile.dart
-│   │   │       │   ├── infoUser.dart
-│   │   │       │   └── menu_profile.dart
-│   │   │       └── profile_screen.dart
-│   │   │
+│   │   │       └── book_details_screen.dart
 │   │   └── repo/
-│   │       └── profile_repo.dart
+│   │       └── book_details_repo.dart
 │   │
-│   └── wishlist/
+│   ├── cart/
+│   │   ├── data/
+│   │   │   └── model/
+│   │   │       └── cart_model.dart
+│   │   ├── presentation/
+│   │   │   ├── cubit/
+│   │   │   │   ├── cart_cubit.dart
+│   │   │   │   └── cart_state.dart
+│   │   │   └── ui/
+│   │   │       ├── widgets/
+│   │   │       └── cart_screen.dart
+│   │   └── repo/
+│   │       └── cart_repo.dart
+│   │
+│   ├── checkout/
+│   │   └── presentation/
+│   │       └── ui/
+│   │           ├── widgets/
+│   │           └── checkout_screen.dart
+│   │
+│   ├── wishlist/
+│   │   ├── data/
+│   │   │   └── model/
+│   │   │       └── wishlist_model.dart
+│   │   ├── presentation/
+│   │   │   ├── cubit/
+│   │   │   │   ├── wishlist_cubit.dart
+│   │   │   │   └── wishlist_state.dart
+│   │   │   └── ui/
+│   │   │       ├── widgets/
+│   │   │       │   └── wishlist_item.dart
+│   │   │       └── wishlist_screen.dart
+│   │   └── repo/
+│   │       └── wishlist_repo.dart
+│   │
+│   └── profile/
 │       ├── data/
 │       │   └── model/
-│       │       └── wishlist_model.dart
-│       │
+│       │       └── profile_response.dart
 │       ├── presentation/
 │       │   ├── cubit/
-│       │   │   ├── wishlist_cubit.dart
-│       │   │   └── wishlist_state.dart
-│       │   │
+│       │   │   ├── profile_cubit.dart
+│       │   │   └── profile_state.dart
 │       │   └── ui/
 │       │       ├── widgets/
-│       │       │   └── wishlist_item.dart
-│       │       └── wishlist_screen.dart
-│       │
+│       │       │   ├── header_profile.dart
+│       │       │   ├── infoUser.dart
+│       │       │   └── menu_profile.dart
+│       │       └── profile_screen.dart
 │       └── repo/
-│           └── wishlist_repo.dart
+│           └── profile_repo.dart
 │
 ├── gen/
 │   └── locale_keys.g.dart
 │
 ├── bookia_store.dart
 └── main.dart
-
 ```
+
+
 
 ## 📱 App Screenshots
 
-### Onboarding & Authentication
+### Error Handling 
+<img src="assets\screenshots\flutter_01 copy 4.png" width="180"/> 
+<img src="assets\screenshots\flutter_02 copy 3.png" width="180"/> 
+
+### Onboarding & Authentication | Home & Book Discovery | Book Search & Details | Shopping Cart & Checkout | Wishlist & Favorites | User Profile & Account Management
 
 <img src="assets\screenshots\flutter_04.png" width="180"/> <img src="assets\screenshots\flutter_01.png" width="180"/>
 <img src="assets\screenshots\flutter_01 copy.png" width="180"/>
